@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+
+
+<head>
+  <title>Visualised · Census Map</title>
+
+  <link rel="canonical" id="page_url" href="http://visualised.io/martincoulthurst.html" />
+  <meta name="description" content="Martin Coulthurst is a professional developer specialising in Data Visualisation." />
+  <meta name="keywords" content="Martin Coulthurst" />
+  <meta name="author" content="Martin Coulthurst" />
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
+
+
+
+  <!-- ADD CUSTOM CSS -->
+	
+    <link rel="stylesheet" href="../css/bootstrap.css">
+	
+    <link rel="stylesheet" href="../css/football.css">
+	
+    <link rel="stylesheet" href="../css/map.css">
+	
+
+
+
+
+	<!-- ADD CUSTOM JS -->
+	
+	<script src="../js/jquery.js" type="text/javascript"></script>
+	
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	
+	<script src="../js/d3.v3.min.js" type="text/javascript"></script>
+	
+	<script src="../js/queue.v1.min.js" type="text/javascript"></script>
+	
+	<script src="../js/topojson.js" type="text/javascript"></script>
+	
+	<script src="../js/crossfilter.js" type="text/javascript"></script>
+	
+
+</head>
+
+
+<body>
+
+	<div class="container">
+
+
+<!-- HEADER -->
+		<div class="row header">
+
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+
+						<h1 class=""><a class="brand" href="../index.html">Visualised: </a></h1>
+
+						<ul class="nav">
+							<!-- DROP DOWN -->
+							<ul class="nav">
+								<li class="dropdown list">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										Football
+										<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="../football/metrics.html">Metrics</a>
+										</li>
+
+										<li>
+											<a href="../football/heatmap.html">Heatmap</a>
+										</li>
+
+										<li>
+											<a href="../football/tracking.html">Tracking</a>
+										</li>
+
+										<li>
+											<a href="../football/formation.html">Formation</a>
+										</li>
+
+										<li>
+											<a href="../football/matrix.html">Matrix</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</ul>
+
+						<ul class="nav">
+							<li class="dropdown list">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									O N S
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="../ons/wheel.html">National Wellbeing</a>
+									</li>
+
+									<li>
+										<a href="../ons/chart.html">Chart Generator</a>
+									</li>
+
+									<li>
+										<a href="../ons/dashboard.html">Dashboard</a>
+									</li>
+
+									<li>
+										<a href="../ons/bulletin.html">Bulletin</a>
+									</li>
+
+									<li>
+										<a href="../ons/summary.html">Summary</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<ul class="nav">
+							<li class="dropdown list">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Survey
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="../survey/survey.html">Survey Pt 1</a>
+									</li>
+
+									<li>
+										<a href="../survey/map.html">Map</a>
+									</li>
+
+									<li>
+										<a href="../survey/data.html">The Data</a>
+									</li>
+
+									<li>
+										<a href="../survey/twitter.html">Twitter Data</a>
+									</li>
+
+									<li>
+										<a href="../survey/survey2.html">Survey Pt 2</a>
+									</li>
+									<li>
+										<a href="../survey/focus.html">Survey: Focus</a>
+									</li>
+									<li>
+										<a href="../survey/filter.html">Final</a>
+									</li>
+								</ul>
+							</li>
+						</ul>				
+								
+						<ul class="nav pull-right">
+							<li class="list">
+								<a href="../martincoulthurst.html">
+									About
+								</a>
+							</li>
+						</ul>
+						<ul class="nav pull-right">
+							<li class="list">
+								<a id="mailbox">Say hello</a>
+							</li>
+						</ul>
+
+					</div><!--  END OF CONTAINER  -->
+				</div>
+			</div>
+
+		</div>
+		<!-- END OF HEADER -->		
+
+		<!-- TITLE -->
+		<div class="row panel center">
+			<h2 class="">The Map</h2>
+			<h3 class=""><span>Map showing sign up progress</span></h3>
+
+
+
+		</div>
+		<div class="row panel">
+			
+			<p class="offset1 span10">
+				This map shows the number of people in each country completing the <a href="http://www.visualisingdata.com/index.php/2013/03/are-you-interested-in-data-visualisation/" target="_blank">Andy Kirk Census</a> over the course of a week.
+			</p>
+
+		</div>
+		<!-- END OF TITLE -->
+
+
+		<!-- CHART -->
+		<div class="row center">
+			<h3 id="title"><span>World Map: </span></h3>
+			<div id="map" >
+
+			</div>
+		</div>
+		<!-- END OF CHART -->
+
+
+		<!-- PADDING -->
+		<div class="row  center">
+
+		</div>
+		<!-- END OF PADDING -->
+
+
+		<!-- PADDING -->
+		<div class="row  center">
+
+		</div>
+		<!-- END OF PADDING -->
+
+	</div>
+	<!-- END OF CONTAINER -->
+
+
+ 
+
+	<!-- FOOTER --> 
+	<footer>
+	<div class="container">
+		<div class="row footer">
+			<div class="span11" >
+
+				Visualised · Census Map<br/>
+				Author: Martin Coulthurst<br/>
+				Date: 22nd October 2013<br/>
+				<p>
+				<a href="http://visualised.io" class="white">visualised.io</a><br/>
+				</p>
+
+			</div>  
+		</div>  
+	</div> 
+    </footer>
+	<!-- END OF FOOTER -->  
+
+
+
+
+	<script type="text/javascript">
+
+	var username = "hello";
+	var hostname = "visualised.io";
+	var linktext = username + "@" + hostname ;
+
+	$("#mail").attr("href" , "mail" + "to:" + username + "@" + hostname );
+	$("#mailbox").attr("href" , "mail" + "to:" + username + "@" + hostname );
+
+	
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-2818485-5']);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+
+	$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+		
+	</script>
+
+
+  <!-- SOME APPS NEED THE JS AT THE END -->
+  	
+	<!-- include custom js for app -->
+	<script src="../js/map.js"></script>
+
+
+
+<!-- PAGE CLOSE --> 
+</body>
+</html>

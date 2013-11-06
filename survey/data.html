@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+
+
+<head>
+  <title>Visualised · Custom Census Data</title>
+
+  <link rel="canonical" id="page_url" href="http://visualised.io/martincoulthurst.html" />
+  <meta name="description" content="Martin Coulthurst is a professional developer specialising in Data Visualisation." />
+  <meta name="keywords" content="Martin Coulthurst" />
+  <meta name="author" content="Martin Coulthurst" />
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
+
+
+
+  <!-- ADD CUSTOM CSS -->
+	
+    <link rel="stylesheet" href="../css/bootstrap.css">
+	
+    <link rel="stylesheet" href="../css/football.css">
+	
+    <link rel="stylesheet" href="../css/survey.css">
+	
+
+
+
+
+	<!-- ADD CUSTOM JS -->
+	
+	<script src="../js/jquery.js" type="text/javascript"></script>
+	
+	<script src="../js/jquery.csv.js" type="text/javascript"></script>
+	
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	
+	<script src="../js/d3.v3.min.js" type="text/javascript"></script>
+	
+	<script src="../js/queue.v1.min.js" type="text/javascript"></script>
+	
+	<script src="../js/topojson.js" type="text/javascript"></script>
+	
+	<script src="../js/subnav.js" type="text/javascript"></script>
+	
+	<script src="../js/accounting.min.js" type="text/javascript"></script>
+	
+	<script src="../js/jquery.dataTables.min.js" type="text/javascript"></script>
+	
+	<script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
+	
+	<script src="../js/pivot.js" type="text/javascript"></script>
+	
+	<script src="../js/jquery_pivot.js" type="text/javascript"></script>
+	
+
+</head>
+
+
+<body>
+
+	<div class="container">
+
+
+<!-- HEADER -->
+		<div class="row header">
+
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+
+						<h1 class=""><a class="brand" href="../index.html">Visualised: </a></h1>
+
+						<ul class="nav">
+							<!-- DROP DOWN -->
+							<ul class="nav">
+								<li class="dropdown list">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										Football
+										<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="../football/metrics.html">Metrics</a>
+										</li>
+
+										<li>
+											<a href="../football/heatmap.html">Heatmap</a>
+										</li>
+
+										<li>
+											<a href="../football/tracking.html">Tracking</a>
+										</li>
+
+										<li>
+											<a href="../football/formation.html">Formation</a>
+										</li>
+
+										<li>
+											<a href="../football/matrix.html">Matrix</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</ul>
+
+						<ul class="nav">
+							<li class="dropdown list">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									O N S
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="../ons/wheel.html">National Wellbeing</a>
+									</li>
+
+									<li>
+										<a href="../ons/chart.html">Chart Generator</a>
+									</li>
+
+									<li>
+										<a href="../ons/dashboard.html">Dashboard</a>
+									</li>
+
+									<li>
+										<a href="../ons/bulletin.html">Bulletin</a>
+									</li>
+
+									<li>
+										<a href="../ons/summary.html">Summary</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<ul class="nav">
+							<li class="dropdown list">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Survey
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="../survey/survey.html">Survey Pt 1</a>
+									</li>
+
+									<li>
+										<a href="../survey/map.html">Map</a>
+									</li>
+
+									<li>
+										<a href="../survey/data.html">The Data</a>
+									</li>
+
+									<li>
+										<a href="../survey/twitter.html">Twitter Data</a>
+									</li>
+
+									<li>
+										<a href="../survey/survey2.html">Survey Pt 2</a>
+									</li>
+									<li>
+										<a href="../survey/focus.html">Survey: Focus</a>
+									</li>
+									<li>
+										<a href="../survey/filter.html">Final</a>
+									</li>
+								</ul>
+							</li>
+						</ul>				
+								
+						<ul class="nav pull-right">
+							<li class="list">
+								<a href="../martincoulthurst.html">
+									About
+								</a>
+							</li>
+						</ul>
+						<ul class="nav pull-right">
+							<li class="list">
+								<a id="mailbox">Say hello</a>
+							</li>
+						</ul>
+
+					</div><!--  END OF CONTAINER  -->
+				</div>
+			</div>
+
+		</div>
+		<!-- END OF HEADER -->		
+
+		<!-- TITLE -->
+		<div class="row panel center">
+			<h2 class="">The Data</h2>
+			<h3 id="title"><span>Data Visualisation Census 2013</span></h3>
+
+
+
+		</div>
+		<div class="row panel">
+			
+			<p class="offset1 span10">
+				I spent some time cleaning up the data from the survey, building on the work of Alberto Gonzalez Paje, Ramiro Gómez and Andy Kirk.  The @ prefix has been removed from the twitter name, and the text is all lowercase. Duplicates entries and invalid names have been removed. The date of interest field has been standardised and split into months and years. The names link to the twitter accounts. 
+			</p>
+			<p class="offset1 span10">
+				The location field has been split into town and country where available. The country names have been standardised to match the names used in the <a href="http://bl.ocks.org/d/4090846/world-country-names.tsv" target="_blank">world-county-names.tsv</a> file. Finally the latitude and longitude coordinates have been completed using <a href="http://www.latlong.net/" target+"_blank">www.latlong.net</a>
+			</p>			
+			<p class="offset1 span10">
+				<a href="../data/cleanSurvey.csv" target="_blank">The revised data is used below and the csv is available directly.</a> Use the filter fields drop down menu to filter the results ('Country' is the best option). This also displays a quick summary of the number of people who disclosed their Twitter account.
+			</p>
+
+		</div>
+		<!-- END OF TITLE -->
+
+
+
+		    <div class="row panel">
+		    	<div class="subnav offset1"> 
+			    	<h3 class="results span4" id="">Twitter Summary:</h3><h3 class="results span3" id="twit"></h3><h3 class="results span3" id="blank"></h3>
+			    </div>
+			</div>
+
+ 			<div class="row panel">
+			    <span class="offset1 " id="pivot-detail"></span>
+
+			    <div class="subnav offset1"> 
+			      <ul class="nav nav-pills">
+			        <li class="dropdown">
+			          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			            Filter Fields
+			            <b class="caret"></b>
+			          </a>
+			          <ul class="dropdown-menu stop-propagation" style="overflow:auto;max-height:450px;padding:10px;">
+			            <div id="filter-list"></div>
+			          </ul>
+			        </li>
+			      </ul>
+			    </div>
+
+			    <hr/>
+			    <div class="offset1 span10" id="results"></div>
+	        	<hr>
+	    		<div class="clearfix"></div>
+			</div>
+
+
+			
+
+			<div class="clearfix"></div>
+
+
+
+
+			<div class="row panel" id="tableBlock">
+
+	        </div>
+
+
+	    </div>	<!--   END OF CONTAINER   -->
+
+ 
+
+	<!-- FOOTER --> 
+	<footer>
+	<div class="container">
+		<div class="row footer">
+			<div class="span11" >
+
+				Visualised · Custom Census Data<br/>
+				Author: Martin Coulthurst<br/>
+				Date: 20th October 2013<br/>
+				<p>
+				<a href="http://visualised.io" class="white">visualised.io</a><br/>
+				</p>
+
+			</div>  
+		</div>  
+	</div> 
+    </footer>
+	<!-- END OF FOOTER -->  
+
+
+
+
+	<script type="text/javascript">
+
+	var username = "hello";
+	var hostname = "visualised.io";
+	var linktext = username + "@" + hostname ;
+
+	$("#mail").attr("href" , "mail" + "to:" + username + "@" + hostname );
+	$("#mailbox").attr("href" , "mail" + "to:" + username + "@" + hostname );
+
+	
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-2818485-5']);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+
+	$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+		
+	</script>
+
+
+  <!-- SOME APPS NEED THE JS AT THE END -->
+  	
+	<!-- include custom js for app -->
+	<script src="../js/table.js"></script>
+
+
+
+<!-- PAGE CLOSE --> 
+</body>
+</html>

@@ -1,0 +1,58 @@
+.profile {
+  float:left;
+  margin: 0 10px 10px 10px;
+  width:48px;
+  height:48px;
+
+
+}
+.name {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+}
+.screen_name {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.copy {
+  clear: both;
+    font-size: 12px;
+    font-weight: 300;
+    padding-left:10px;
+}
+
+.box {
+//position: absolute;
+  top: 0;
+  width:320px;
+  height:200px;
+  background:#FFF;
+  margin:20px auto;
+  padding:20px 10px;
+}
+
+#bloc {
+	position: relative;
+}
+.stat {
+	float:left;
+    font-size: 12px;
+    font-weight: 300;
+    padding-left:10px;
+}
+
+.stat span{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+.dropshade{
+  -webkit-box-shadow: 0 10px 6px -6px #ccc;
+     -moz-box-shadow: 0 10px 6px -6px #ccc;
+          box-shadow: 0 10px 6px -6px #ccc;
+}

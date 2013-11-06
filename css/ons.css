@@ -1,0 +1,99 @@
+@font-face {
+			font-family: 'Open Sans', sans-serif;
+			font-style: normal;
+			font-weight: 300,400,600;
+
+			}
+
+#pagecontainer  {
+			height: 100%;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300; 
+			font-size: 10pt ;
+			color: #333;
+			line-height: 18px;
+
+			}
+					
+#pagecontainer h1 {
+				font-family: 'Open Sans Condensed', sans-serif;
+				font-weight: 600; 
+				font-size: 24pt ;
+				color: #030303;
+
+			}
+#pagecontainer h1 span{
+				color: #999999;
+			}
+					
+#pagecontainer h2 {
+				font-family: 'Open Sans Condensed', sans-serif;
+				font-size: 22px ;
+				font-weight: 600;
+				line-height: 18pt;
+				color: #030303; 
+				margin-top:50px;
+			}					
+#pagecontainer h3 {
+				font-size: 12pt;
+				color: rgb(51, 51, 51);
+				line-height: 18px;
+			}
+#pagecontainer h4 {
+				font-size: 12pt;
+				color: rgb(51, 51, 51);
+				line-height: 18px;
+			}
+#pagecontainer ul, #pagecontainer ol{
+				padding-left: 20px;
+			}
+
+#pagecontainer a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+#pagecontainer a:hover,.
+#pagecontainer a:active {
+  outline: 0;
+}
+#pagecontainer a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+#pagecontainer a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+#pagecontainer .alt{
+	background-color: AliceBlue ;
+}
+
+#pagecontainer table {
+	margin-left:30px;
+	width:80%;
+    font-size: 85%;
+    background-color: #fff;
+}
+#pagecontainer td{
+	text-align: left;
+}
+#pagecontainer table thead,
+#pagecontainer table tr.even,
+#pagecontainer table tr.alt,
+#pagecontainer table tr:nth-of-type(even) {
+    background: #fff; }
+
+#pagecontainer .chart {
+	margin-left:30px;
+	margin-right:30px;
+	max-width:80%;
+
+}
+#pagecontainer .left {
+	text-align: left;
+
+}

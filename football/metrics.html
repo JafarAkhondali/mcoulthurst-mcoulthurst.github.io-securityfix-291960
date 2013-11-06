@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+
+
+<head>
+  <title>Visualised · Position Specific Metrics</title>
+
+  <link rel="canonical" id="page_url" href="http://visualised.io/martincoulthurst.html" />
+  <meta name="description" content="Martin Coulthurst is a professional developer specialising in Data Visualisation." />
+  <meta name="keywords" content="Martin Coulthurst" />
+  <meta name="author" content="Martin Coulthurst" />
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
+
+
+
+  <!-- ADD CUSTOM CSS -->
+	
+    <link rel="stylesheet" href="../css/bootstrap.css">
+	
+    <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+	
+    <link rel="stylesheet" href="../css/football.css">
+	
+
+
+
+
+	<!-- ADD CUSTOM JS -->
+	
+	<script src="../js/jquery.js" type="text/javascript"></script>
+	
+	<script src="../js/miso.ds.deps.min.0.3.0.js" type="text/javascript"></script>
+	
+	<script src="../js/d3.v3.min.js" type="text/javascript"></script>
+	
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	
+	<script src="../js/bootstrap-select.min.js" type="text/javascript"></script>
+	
+	<script src="../js/player.js" type="text/javascript"></script>
+	
+
+</head>
+
+
+<body>
+
+	<div class="container">
+
+
+<!-- HEADER -->
+		<div class="row header">
+
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+
+						<h1 class=""><a class="brand" href="../index.html">Visualised: </a></h1>
+
+						<ul class="nav">
+							<!-- DROP DOWN -->
+							<ul class="nav">
+								<li class="dropdown list">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										Football
+										<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="../football/metrics.html">Metrics</a>
+										</li>
+
+										<li>
+											<a href="../football/heatmap.html">Heatmap</a>
+										</li>
+
+										<li>
+											<a href="../football/tracking.html">Tracking</a>
+										</li>
+
+										<li>
+											<a href="../football/formation.html">Formation</a>
+										</li>
+
+										<li>
+											<a href="../football/matrix.html">Matrix</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</ul>
+
+						<ul class="nav">
+							<li class="dropdown list">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									O N S
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="../ons/wheel.html">National Wellbeing</a>
+									</li>
+
+									<li>
+										<a href="../ons/chart.html">Chart Generator</a>
+									</li>
+
+									<li>
+										<a href="../ons/dashboard.html">Dashboard</a>
+									</li>
+
+									<li>
+										<a href="../ons/bulletin.html">Bulletin</a>
+									</li>
+
+									<li>
+										<a href="../ons/summary.html">Summary</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<ul class="nav">
+							<li class="dropdown list">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Survey
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="../survey/survey.html">Survey Pt 1</a>
+									</li>
+
+									<li>
+										<a href="../survey/map.html">Map</a>
+									</li>
+
+									<li>
+										<a href="../survey/data.html">The Data</a>
+									</li>
+
+									<li>
+										<a href="../survey/twitter.html">Twitter Data</a>
+									</li>
+
+									<li>
+										<a href="../survey/survey2.html">Survey Pt 2</a>
+									</li>
+									<li>
+										<a href="../survey/focus.html">Survey: Focus</a>
+									</li>
+									<li>
+										<a href="../survey/filter.html">Final</a>
+									</li>
+								</ul>
+							</li>
+						</ul>				
+								
+						<ul class="nav pull-right">
+							<li class="list">
+								<a href="../martincoulthurst.html">
+									About
+								</a>
+							</li>
+						</ul>
+						<ul class="nav pull-right">
+							<li class="list">
+								<a id="mailbox">Say hello</a>
+							</li>
+						</ul>
+
+					</div><!--  END OF CONTAINER  -->
+				</div>
+			</div>
+
+		</div>
+		<!-- END OF HEADER -->		
+
+		<!-- TITLE -->
+		<div class="row panel center">
+			<h2 class="">Position Specific Metrics</h2>
+			<h3 class="">Bolton Wanderers 2 - 3 Manchester City.</h3>     
+			<h3 class=""><span> Saturday 21st August 2011</span></h3>     
+
+			<div class="tip" id="x" > 
+				<span class=" left" id="distance">88.8m</span>
+				<div style="clear: both;"></div>
+
+				<span class="subtitle left" id="description">Player</span><br/>
+				<span class="subtitle left" id="pass">to target</span>
+				<span class="time white right" id="time">00:00</span>
+				<div style="clear: both;"></div>
+
+
+
+
+			</div>   
+
+		</div>
+		<!-- END OF TITLE -->
+
+
+		<div class="row panel">
+
+		</div>
+
+
+		<!-- MAIN PADDING -->
+		<div class="row panel leftMargin">
+
+
+			<div class="span4">
+				<h4 class="" id="player">SILVA, David</h4> 
+			</div>
+
+			<div class="span3">
+				<h4 class="" id="team">Manchester City</h4> 
+			</div>
+
+
+			<div class="span2 ">
+				<h4>
+					<select class="selectpicker" id="playerMenu">
+						<option value="16">Aguero, Sergio</option>
+						<option value="18">Barry, Gareth</option>
+						<option value="10">Dzeko, Edin</option>
+						<option value="25">Hart, Joe</option>
+						<option value="13">Kolarov, Aleksandar</option>
+						<option value="4">Kompany, Vincent</option>
+						<option value="6">Lescott, Joleon</option>
+						<option value="7">Milner, James</option>
+						<option value="2">Richards, Micah</option>
+						<option value="21" selected="true">Silva, David</option>
+						<option value="32">Tevez, Carlos</option>
+						<option value="42">Toure, Gnegneri Yaya</option>
+					</select>
+				</h4>
+			</div>
+
+
+
+			<div class="clear"></div>
+
+			<div class="row span11">
+				<div class="row">
+
+
+					<div class="span2 center">
+						<div class="shirt">
+							<img src="../img/mancity.png" />
+							<h5 class="white center" id="shirt"></h5>
+						</div>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Age</span> <br/>
+						<span class="data" id="age"></span> <br/>
+						<span class="subtitle" id="dateOfBirth"></span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Height</span> <br/>
+						<span class="data" id="ht"></span> <br/>
+
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Weight</span> <br/>
+						<span class="data" id="wt"></span> <br/>
+
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Debut</span> <br/>
+						<span class="data" id="debut"></span> <br/>
+					</div>
+
+
+
+
+
+
+
+				</div>
+			</div>
+
+
+
+
+			<div class="clear"></div>
+
+
+
+			<div class="span11 section row ">
+
+
+				<div class="row span10  ">
+					<h3 class="sectionTitle span2">Summary</h3>
+				</div>
+
+				<div class="clear"></div>
+				<div class="row">
+
+					<div class="span2 center">
+						<span class="title">Goal Probability Added*</span> <br/>
+						<span class="data" id="">0.53</span> <br/>
+						<span class="subtitle"></span>
+
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Shots</span> <br/>
+						<span class="data" id="shots">2</span> <br/>
+						<span class="subtitle" id="shotsOnTarget">1 on Target</span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Passes</span> <br/>
+						<span class="data" id="passes">70</span> <br/>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Accuracy</span> <br/>
+						<span class="data" id="accuracy">87%</span> <br/>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Distance Travelled</span> <br/>
+						<span class="data" id="distanceTravelled">2268</span> <br/>
+						<span class="subtitle">metres</span>
+					</div>
+					
+				</div>
+
+			</div>
+
+
+
+			
+			<div class="clear"></div>
+			
+			
+			
+			
+
+			<div class="span11 section row">
+				<div class="row">
+					<h3 class="sectionTitle">Performance</h3>
+					<br/>
+
+					<div class="span2 center">
+						<span class="title">High Speed Sprints</span> <br/>
+						<span class="data" id="speedCount">27</span> <br/>
+						<span class="subtitle">above 7 m /s</span>
+
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Distance with Ball</span> <br/>
+						<span class="data" id="ballDistance">536</span> <br/>
+						<span class="subtitle">metres</span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Top Speed</span> <br/>
+						<span class="data" id="topSpeed">9.0</span> <br/>
+						<span class="subtitle">metres / sec</span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Average Speed</span> <br/>
+						<span class="data" id="meanSpeed">6.7</span> <br/>
+						<span class="subtitle">metres / sec</span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Time on Ball</span> <br/>
+						<span class="data" id="timeOnBall">04:53</span> <br/>
+						<span class="subtitle">of 94 mins</span>
+					</div>
+
+				</div>
+			</div>
+
+
+
+			
+			
+			<div class="clear"></div>
+			
+
+
+			<div class="span11 section row">
+				<div class="row">
+					<h3 class="sectionTitle">Passing</h3>
+					<br/>
+
+					<div class="span2 center">
+						<span class="title">Total Passes</span> <br/>
+						<span class="data" id="totalPasses">70</span> <br/>
+						<span class="subtitle" id="incompletePasses">9 incomplete</span>
+
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Final third</span> <br/>
+						<span class="data" id="finalThird">38</span> <br/>
+						<span class="subtitle" id="finalThirdIncomplete">2 incomplete</span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Average Distance</span> <br/>
+						<span class="data" id="meanPass">18.1</span> <br/>
+						<span class="subtitle" id="">metres</span>
+					</div>
+
+
+					<div class="span4" id="recipientChart">
+						<span class="title">Recipients</span>
+					</div>
+
+				</div>
+			</div>
+
+
+			<!-- ROW -->
+			<div class="clear"></div>
+			
+
+			<div class="span11 row">
+				<div class="row">
+
+					<div class="span4" id="passChart"><span class="title">Pass distribution by distance</span></div>
+
+				</div>
+			</div>
+
+
+
+
+			<!-- ROW -->	
+			<div class="clear"></div>
+			
+
+
+			<div class="span11 row">
+				<div class="row">
+
+					<div class="span4" id="distanceChart"><span class="title">Pass distances</span></div>
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="clear"></div>
+			
+			
+			<div class="span11 section row">
+				<div class="row">
+					<h3 class="sectionTitle">Positioning</h3>
+					<br/>
+
+					<div class="span10 " id="pitch">
+
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="span10 " >
+						Click a position for more details of the pass.
+					</div>
+				</div>
+				
+				<div class="row">
+
+					<div class="span2 center">
+						<span class="title" id="">Time</span> <br/>
+						<span class="data" id="passTime">0:00</span> <br/>
+						<span class="subtitle" id="passCompletion"></span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Distance</span> <br/>
+						<span class="data" id="passDistance">0.0</span> <br/>
+						<span class="subtitle">metres</span>
+					</div>
+					
+					<div class="span2 center">
+						<span class="title">Recipient</span> <br/>
+						<span class="data" id="surname"></span> <br/>
+						<span class="subtitle" id="firstname"></span>
+					</div>
+
+					<div class="span2 center">
+						<span class="title">Ball Speed</span> <br/>
+						<span class="data" id="speed">0.0</span> <br/>
+						<span class="subtitle">metres / sec</span>
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+
+			<div class="clear"></div>
+
+
+			<!-- ROW -->	
+			<div class="clear"></div>
+			
+
+
+			<div class="span11 row">
+				<div class="row">
+					<p class="offfset1">The data is from a number of sources with the main coordinates used with thanks to <a href="http://www.optasports.com/" target="_blank">Opta</a></p>
+
+				</div>
+			</div>
+
+
+
+		</div> <!-- END OF MAIN PADDING -->
+
+
+
+
+
+		<!-- PADDING -->
+		<div class="row  center">
+
+		</div>
+		<!-- END OF PADDING -->
+
+
+
+	</div>
+	<!-- END OF CONTAINER -->
+
+
+
+
+				
+				
+
+
+
+ 
+
+	<!-- FOOTER --> 
+	<footer>
+	<div class="container">
+		<div class="row footer">
+			<div class="span11" >
+
+				Visualised · Position Specific Metrics<br/>
+				Author: Martin Coulthurst<br/>
+				Date: 25th October 2013<br/>
+				<p>
+				<a href="http://visualised.io" class="white">visualised.io</a><br/>
+				</p>
+
+			</div>  
+		</div>  
+	</div> 
+    </footer>
+	<!-- END OF FOOTER -->  
+
+
+
+
+	<script type="text/javascript">
+
+	var username = "hello";
+	var hostname = "visualised.io";
+	var linktext = username + "@" + hostname ;
+
+	$("#mail").attr("href" , "mail" + "to:" + username + "@" + hostname );
+	$("#mailbox").attr("href" , "mail" + "to:" + username + "@" + hostname );
+
+	
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-2818485-5']);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+
+	$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+		
+	</script>
+
+
+
+
+<!-- PAGE CLOSE --> 
+</body>
+</html>
