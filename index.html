@@ -1,113 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html class="no-js" lang="">
+  <head>
     <meta charset="utf-8" />
-    <title>Lightness: Data Visualisation</title>
-    <link rel="stylesheet" href="tufte.alt.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
 
-<body>
-    <article>
-        <h1 id="lightness">Lightness</h1>
-        <p class="subtitle"><a href="/portfolio/">Martin Coulthurst</a></p>
-        <!-- <div class="epigraph">
-            <blockquote>
-                <p>It is true that software cannot exercise its powers of lightness except through the weight of hardware. But it is software that gives the orders&hellip;
-                    <br/>&hellip;The iron machines still exist, but they obey the orders of weightless bits. </p>
-                <footer>Six Memos For The Next Millennium, Italo Calvino</footer>
-            </blockquote>
-        </div> -->
-        <section>
-            <p>
-                Lightness provides front-end developer skills with a focus on data analysis and visualisation. Based in beautiful Shropshire in the UK, the company has helped clients across the globe realise their ideas for over nineteen years.
-            </p>
-            <p>
-                Lightness has worked with clients in the US, EU and Asia, from spare-room startups to national government projects, raising revenue, improving efficiency, and helping at least three companies toward million dollar acquisitions. Examples of the UX, UI, data-vis and interactive projects can be seen in this <a href="/portfolio/">portfolio</a>.
-            </p>
-            <p>
-                Projects include work for:
-                <ul>
-                    <li>The Food Standards Agency</li>
-                    <li>Goldsmiths University</li>
-                    <li>The Ministry of Housing, Communities and Local Government</li>
-                    <li>Middlesex University</li>
-                    <li>The Department of Work and Pensions</li>
-                    <li>The Office for National Statistics</li>
-                    <li>Google</li>
-                    <li>BBC</li>
-                    <li>ITV</li>
-                    <li>The National Trust</li>
-                    <li>Lego</li>
-                </ul>
-            </p>
-            <p>
-                Lightness is especially interested in working with clients in the creation of educational and cultural projects, such as touch screen exhibits, interactive displays and, of course, websites.
-            </p>
-        </section>
-        <section>
-            <h2 id="about">About</h2>
-            <p>
-                Martin Coulthurst is a designer and developer with extensive experience of <a href="/portfolio/">data visualisation</a>. The same data is <a href="http://visualised.io/portfolio/" target = "_blank" rel="noopener">visualised</a> in a web application featuring an interative map, timeline and other controls. He has also made a virtue out of his inability to hold down a proper job.
-            </p>
-            <p>
-                Previous work included a focus on web projects to deliver real-time collaboration and video streaming solutions.
-            </p>
-            <p>
-                Martin Coulthurst read Civil Engineering at the University of Leeds and worked as an Engineer on a range of projects, including the construction of the Second Severn Crossing, and large scale computer-based hydraulic modelling work. He also read Sculpture at the University of Wolverhampton.
-            </p>
-        </section>
-        <section>
-            <h2 id="contact-us">Contact Us</h2>
-            <p id="contact">
-            </p>
-        </section>
-    </article>
-    <footer>
-        <section>
-            <div>
-                <a href="http://lightness.co.uk">Lightness</a> · <a href="http://visualised.io">Visualised</a>
-                <br/> Author: Martin Coulthurst
-                <br/> Date: 05<sup>th</sup> Nov 2019
-            </div>
-        </section>
-    </footer>
-</body>
-<script type="text/javascript">
-  var arr = ["mc", "lightness.co.uk"];
-  var elem = document.getElementById('contact');
-  elem.innerHTML = "<a href=\"mail" + "to:" + arr.join("@") + "\">" + arr.join("@") + "</" + "a>";
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/journey.css" />
 
-  // Do this only after we've displayed the initial text.
-  if (window.attachEvent) {window.attachEvent('onload', loadFont);}
-    else if (window.addEventListener) {window.addEventListener('load', loadFont, false);}
-    else {document.addEventListener('load', loadFont, false);}
+    <meta name="theme-color" content="#fafafa" />
+  </head>
 
-  function loadFont(){
-    console.log('onload');
-    var url = 'https://fonts.googleapis.com/css?family=Lato:300';
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        var style = document.createElement('style');
-        style.innerHTML = xhr.responseText;
-        document.head.appendChild(style);
-      }
-    };
-    xhr.send();
-  }
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
 
+    <div class="container-fluid" role="main">
+      <div class="row">
+        <h1 id="person">Dynamic User Experience Journey Map</h1>
+      </div>
+      <div class="container">
+        <div class="button-wrap">
+          <label class="button" for="browse">Load CSV data
+            <input class="" type="file" id="browse" accept=".csv"/>
+          </label>
+          <button id="download-png-button" class="button">Download PNG</button>
+          <button id="download-svg-button" class="button">Download SVG</button>
+        </div>
+      </div>
+      <canvas id="canv" class="hidden" width="1200" height="800"></canvas>
+      <div class="row">
+        <div id="chart">
+          <svg
+            id="chart"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="1200"
+            height="800"
+            viewBox="0 0 1200 800"
+          ></svg>
+        </div>
+      </div>
+    </div>
 
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-2818485-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- 
+    <script>
+      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+      ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    -->
+  <script src="main.js"></script></body>
 </html>
